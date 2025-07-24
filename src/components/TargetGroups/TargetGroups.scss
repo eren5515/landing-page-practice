@@ -1,0 +1,37 @@
+@import "../../styles/abstracts/index.scss";
+
+.target-groups {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  padding: 0 190.5px;
+  &-header {
+    width: 47%;
+  }
+
+  &-item {
+    padding: 32px 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    width: 27%;
+    box-shadow: 0px 2.65px 5.29px rgba(171, 190, 209, 0.2);
+
+    &-list {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 10px;
+    }
+
+    &-img {
+      margin-bottom: 10px;
+      width: 87px;
+      height: 76px;
+    }
+  }
+}

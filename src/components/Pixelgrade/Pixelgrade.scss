@@ -1,0 +1,19 @@
+@import "../../styles/abstracts/index.scss";
+
+.pixelgrade {
+  display: flex;
+  justify-content: center;
+  padding: 68.5px 190.5px;
+  gap: 65.5px;
+
+  &-content {
+    padding-right: 79.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    justify-content: center;
+  }
+  .custom-button {
+    margin-top: 21px;
+  }
+}

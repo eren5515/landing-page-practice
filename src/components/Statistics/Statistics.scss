@@ -1,0 +1,33 @@
+@import "../../styles/abstracts/index.scss";
+
+.statistics {
+  background-color: $silver;
+  padding: 85px 190px;
+
+  display: flex;
+  justify-content: space-between;
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10.5px;
+
+    .text {
+      width: 67%;
+    }
+  }
+
+  &-right {
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+
+      &-item {
+        display: flex;
+        gap: 21px;
+        width: 337px;
+      }
+    }
+  }
+}

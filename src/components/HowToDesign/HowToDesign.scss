@@ -1,0 +1,18 @@
+@import "../../styles/abstracts/index.scss";
+
+.howtodesign {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 190px;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    width: 57%;
+    .custom-button {
+      margin-top: 21px;
+    }
+  }
+}

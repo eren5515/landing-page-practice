@@ -1,0 +1,15 @@
+@import "../../styles/abstracts/index.scss";
+
+.get-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  padding: 42px 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $silver;
+  &-header {
+    width: 50%;
+  }
+}

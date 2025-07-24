@@ -1,0 +1,8 @@
+@import "./abstracts/_index.scss";
+@import "./components/_index.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 53.3px;
+}

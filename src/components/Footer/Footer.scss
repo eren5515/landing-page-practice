@@ -1,0 +1,99 @@
+@import "../../styles/abstracts/index.scss";
+
+.footer {
+  background-color: $outer-space;
+  display: flex;
+  padding: 84.7px 218.5px;
+  justify-content: space-between;
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .text {
+      width: 65%;
+      line-height: 2;
+    }
+
+    &-social-icons {
+      display: flex;
+      gap: 21.2px;
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    gap: 39.7px;
+
+    .footer-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15.9px;
+      &-item {
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-color !important;
+        }
+      }
+    }
+
+    &-section {
+      display: flex;
+      flex-direction: column;
+      gap: 31.8px;
+      width: 212px;
+    }
+
+    &-mail {
+      display: flex;
+      flex-direction: column;
+      gap: 31.8px;
+
+      &-input {
+        border: none;
+        font-size: $text-md;
+        background-color: transparent;
+        width: 60%;
+
+        &::placeholder {
+          color: white;
+          font-size: $text-xs;
+          font-weight: $regular;
+        }
+        &:focus {
+          outline: none;
+        }
+        &-wrapper {
+          width: 80%;
+          height: 48px;
+          border: none;
+          padding: 0 16px;
+          font-size: $text-md;
+          background-color: rgba(255, 255, 255, 0.2);
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          img {
+            cursor: pointer;
+          }
+        }
+      }
+
+      // &-label {
+      //     background-color: rgba(255, 255, 255, 0.2);
+      //     border-radius: 8px;
+      //     color: $white;
+      //     padding: 15px;
+
+      // }
+    }
+  }
+}
