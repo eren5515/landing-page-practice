@@ -1,10 +1,40 @@
-import logo from "../../images/Logo.png";
+"use client";
+import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import readMore1 from "../../images/read-more-1.png";
 import readMore2 from "../../images/read-more-2.png";
 import readMore3 from "../../images/read-more-3.png";
 import "@/components/ReadMore/ReadMore.scss";
 export default function ReadMore() {
+  const router = useRouter();
+  const cardList = [
+    {
+      title: "Creating Streamlined Safeguarding Processes with OneRen",
+      image: readMore1,
+    },
+    {
+      title:
+        "What are your safeguarding responsibilities and how can you manage them?",
+      image: readMore2,
+    },
+    {
+      title: "Revamping the Membership Model with Triathlon Australia",
+      image: readMore3,
+    },
+  ];
+
+  function goToBlog(title) {
+    const slugTitle = title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, "")
+      .replace(/\s+/g, "-")
+
+      .trim();
+
+    router.push(`/blog/${slugTitle}`);
+  }
+
   return (
     <div className="read-more">
       <h2 className="read-more-header text -secondary-color -semibold -xl">
@@ -17,36 +47,20 @@ export default function ReadMore() {
         more.​
       </p>
       <div className="read-more-card-list">
-        <div className="read-more-card">
-          <Image src={readMore1} alt="image"></Image>
-          <div className="read-more-card-extra">
-            <h3 className="text -third-color -semibold -md">
-              Creating Streamlined Safeguarding Processes with OneRen
-            </h3>
-            <p className="text -primary-color -semibold -md">Read more →</p>
+        {cardList.map((card, index) => (
+          <div className="read-more-card" key={index}>
+            <Image src={card.image} alt="image"></Image>
+            <div className="read-more-card-extra">
+              <h3 className="text -third-color -semibold -md">{card.title}</h3>
+              <p
+                onClick={() => goToBlog(card.title)}
+                className="text -primary-color -semibold -md"
+              >
+                Read more →
+              </p>
+            </div>
           </div>
-        </div>
-
-        <div className="read-more-card">
-          <Image src={readMore2} alt="image"></Image>
-          <div className="read-more-card-extra">
-            <h3 className="text -third-color -semibold -md">
-              What are your safeguarding responsibilities and how can you manage
-              them?
-            </h3>
-            <p className="text -primary-color -semibold -md">Read more →</p>
-          </div>
-        </div>
-
-        <div className="read-more-card">
-          <Image src={readMore3} alt="image"></Image>
-          <div className="read-more-card-extra">
-            <h3 className="text -third-color -semibold -md">
-              Revamping the Membership Model with Triathlon Australia
-            </h3>
-            <p className="text -primary-color -semibold -md">Read more →</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

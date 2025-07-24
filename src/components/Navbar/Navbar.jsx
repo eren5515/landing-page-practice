@@ -1,23 +1,26 @@
 import logo from "../../images/Logo.png";
 import Image from "next/image";
 import "@/components/Navbar/Navbar.scss";
+import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="nav">
-      <Image src={logo} alt="Logo" />
+      <Link href="/" className="nav-logo">
+        <Image src={logo} alt="Logo" /> 
+      </Link>
       <div className="nav-list">
-        <a className="nav-list-item text -sm -medium -secondary-color" href="">
+        <Link href="/" className="nav-list-item text -sm -medium -secondary-color">
           Home
-        </a>
+        </Link>
         <a className="nav-list-item text -sm -medium -secondary-color" href="">
           Features
         </a>
         <a className="nav-list-item text -sm -medium -secondary-color" href="">
           Community
         </a>
-        <a className="nav-list-item text -sm -medium -secondary-color" href="">
+        <Link href="/blog" className="nav-list-item text -sm -medium -secondary-color" >
           Blog
-        </a>
+        </Link>
         <a className="nav-list-item text -sm -medium -secondary-color" href="">
           Pricing
         </a>

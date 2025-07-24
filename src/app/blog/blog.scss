@@ -1,0 +1,20 @@
+@import "../../styles/abstracts/index.scss";
+
+.blog {
+  padding: 104px 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: $silver;
+  &-content {
+    width: 90%;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: $silver;
+    padding: 64px 180px;
+  }
+}
