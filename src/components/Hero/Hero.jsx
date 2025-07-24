@@ -8,7 +8,7 @@ export default function Hero() {
         <h1 className="text -xxl -secondary-color -semibold">
           Lessons and insights
           <span className="text -xxl -primary-color -semibold">
-            from 8 years
+            {" "}from 8 years
           </span>
         </h1>
         <p className="text -sm -third-color -regular">
