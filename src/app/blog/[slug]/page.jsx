@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: post.title,
-    description: post.content.slice(0, 160)
+    description: post.content.slice(0, 160) +"...",
   };
 }
 
@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 }
 
 export default function Page({ params }) {
-  const post = blogPosts.filter((p) => p.slug === params.slug)[0];
+  const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) {
     return <div>Yazı bulunamadı.</div>;
