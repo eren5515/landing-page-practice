@@ -6,6 +6,9 @@ import readMore1 from "../../images/read-more-1.png";
 import readMore2 from "../../images/read-more-2.png";
 import readMore3 from "../../images/read-more-3.png";
 import "@/components/ReadMore/ReadMore.scss";
+import slugify from "@/utils/slugify";
+
+
 export default function ReadMore() {
   const router = useRouter();
   const cardList = [
@@ -25,12 +28,7 @@ export default function ReadMore() {
   ];
 
   function goToBlog(title) {
-    const slugTitle = title
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, "")
-      .replace(/\s+/g, "-")
-
-      .trim();
+    const slugTitle = slugify(title);
 
     router.push(`/blog/${slugTitle}`);
   }

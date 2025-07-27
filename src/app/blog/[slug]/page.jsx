@@ -1,10 +1,32 @@
 import React from "react";
 import "@/styles/main.scss";
 import "../blog.scss";
-import { posts } from "@/lib/posts";
+import { blogPosts } from "@/lib/posts";
+
+export async function generateMetadata({ params }) {
+  const post = blogPosts.find((p) => p.slug === params.slug);
+
+  if (!post) {
+    return {
+      title: "Yazı bulunamadı",
+      description: "Aradığınız blog yazısı bulunamadı.",
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.content.slice(0, 160)
+  };
+}
+
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export default function Page({ params }) {
-  const post = posts[params.slug];
+  const post = blogPosts.filter((p) => p.slug === params.slug)[0];
 
   if (!post) {
     return <div>Yazı bulunamadı.</div>;

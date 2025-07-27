@@ -1,11 +1,11 @@
 import "@/styles/main.scss";
-import { posts } from "@/lib/posts";
+import { blogPosts} from "@/lib/posts";
 import "@/app/blog/blog.scss";
 
 export default function Page() {
   return (
     <div className="blog-list">
-      {Object.values(posts).map((post, index) => (
+      {Object.values(blogPosts).map((post, index) => (
         <div className="blog-item" key={index}>
           <h2 className="blog-title text -md -semibold -secondary-color">
             {post.title}

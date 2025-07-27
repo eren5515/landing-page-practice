@@ -1,5 +1,8 @@
 @import "./abstracts/_index.scss";
 @import "./components/_index.scss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 .container {
   display: flex;
