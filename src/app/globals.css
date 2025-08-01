@@ -5,4 +5,51 @@
   font-family: "Inter", sans-serif;
 }
 
+/* Force light mode - prevent dark mode */
+html {
+  color-scheme: light;
+}
+
+/* Override any dark mode styles */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: light;
+  }
+  
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  * {
+    background-color: inherit !important;
+    color: inherit !important;
+  }
+}
+
+/* Ensure all elements stay in light mode */
+body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Additional overrides for common dark mode issues */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ul, li, nav, header, footer, main, section, article, aside {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Override any potential dark mode styles from external libraries */
+[data-theme="dark"], [class*="dark"], .dark {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Force light mode for all form elements */
+input, textarea, select, button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #cccccc !important;
+}
+
 
