@@ -16,3 +16,24 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .howtodesign {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    text-align: center;
+    &-image {
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+    }
+    &-content {
+      width: 100%;
+      padding: 10px 20px;
+      align-items: center;
+    }
+  }
+
+}

@@ -47,7 +47,7 @@ export default function ReadMore() {
       <div className="read-more-card-list">
         {cardList.map((card, index) => (
           <div className="read-more-card" key={index}>
-            <Image src={card.image} alt="image"></Image>
+            <Image className="read-more-card-image" src={card.image} alt="image"></Image>
             <div className="read-more-card-extra">
               <h3 className="text -third-color -semibold -md">{card.title}</h3>
               <p

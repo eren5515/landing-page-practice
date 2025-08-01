@@ -4,6 +4,7 @@
   background-color: $silver;
   display: flex;
   align-items: center;
+  
   padding: 127px 190.5px;
   position: relative;
 
@@ -11,11 +12,13 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    width: 60%;
     
   }
 
   &-slide {
     display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -25,5 +28,46 @@
   background-color: $primary-color!important; 
   opacity: 1;             
 
+
+}
+
+
+@media (max-width: 768px) {
+  .hero{
+    width: 90%;
+    padding: 0;
+    height: 100vh;
+    &-content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      h1 {
+        font-size: 30px!important;
+        span {
+          font-size: 30px!important;
+        }
+      }
+    }
+  }
+  .hero-slide {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .hero-image {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+  }
+  
+  .swiper {
+    height: 80%;
+  }
 
 }

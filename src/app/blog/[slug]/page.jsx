@@ -29,7 +29,7 @@ export default function Page({ params }) {
   const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) {
-    return <div>Yazı bulunamadı.</div>;
+    return <div className="blog-not-found"><h1>Yazı bulunamadı.</h1></div>;
   }
 
   return (

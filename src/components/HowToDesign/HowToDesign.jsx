@@ -4,7 +4,7 @@ import howToDesignImage from "../../images/pana.png";
 export default function HowToDesign() {
   return (
     <div className="howtodesign">
-      <Image src={howToDesignImage} alt="image"></Image>
+      <Image className="howtodesign-image" src={howToDesignImage} alt="image"></Image>
       <div className="howtodesign-content">
         <h2 className="text -secondary-color -semibold -xl">
           How to design your site footer like we did

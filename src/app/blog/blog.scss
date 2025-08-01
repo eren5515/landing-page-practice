@@ -2,6 +2,7 @@
 
 .blog {
   padding: 104px 390px;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -15,6 +16,32 @@
     flex-direction: column;
     gap: 32px;
     background-color: $silver;
-    padding: 64px 180px;
+    padding: 130px 180px;
+    padding-top: 150px;
+
+  }
+}
+
+.blog-not-found {
+  padding:304px 390px;
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .blog {
+    padding:  20px;
+    padding-top: 100px;
+  }
+  .blog-list {
+    padding: 30px 20px;
+    padding-top: 100px;
+
+  }
+  .blog-not-found {
+    padding: 400px 20px;
+    padding-top: 100px;
   }
 }

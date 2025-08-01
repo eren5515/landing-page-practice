@@ -16,3 +16,14 @@
     padding: 33.1px 0;
   }
 }
+@media (max-width: 768px) {
+  .clients {
+    padding: 0 20px;
+    text-align: center;
+    &-logos {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+}
+

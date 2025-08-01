@@ -5,7 +5,7 @@ import "@/components/Pixelgrade/Pixelgrade.scss";
 export default function Pixelgrade() {
   return (
     <div className="pixelgrade">
-      <Image src={image} alt="image" />
+      <Image className="pixelgrade-image" src={image} alt="image" />
 
       <div className="pixelgrade-content">
         <h2 className="pixelgrade-content-header text -secondary-color -semibold -xl">

@@ -30,7 +30,7 @@ export default function Hero() {
       img: hero,
       title: "Carousel item 3",
       titleHighlight: "Carousel item 3",
-      text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
     },
   ];
 
@@ -45,6 +45,8 @@ export default function Hero() {
         {carouselItems.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="hero-slide">
+              <Image className="hero-image" src={item.img} alt={`Slide ${index}`} />
+
               <div className="hero-content">
                 <h1 className="text -xxl -secondary-color -semibold">
                   {item.title}
@@ -57,7 +59,6 @@ export default function Hero() {
                   Register
                 </button>
               </div>
-              <Image src={item.img} alt={`Slide ${index}`} />
             </div>
           </SwiperSlide>
         ))}

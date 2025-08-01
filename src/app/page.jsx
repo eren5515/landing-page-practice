@@ -19,10 +19,10 @@ export default function Home() {
       <TargetGroups/>
       <Pixelgrade/>
       <Statistics/>
-      <HowToDesign/>
-      <CustomerNote/>
-      <ReadMore/>
-      <GetDemo/>
+        <HowToDesign/>
+        <CustomerNote/>
+        <ReadMore/>
+        <GetDemo/>
     </div>
   );
 }

@@ -8,5 +8,18 @@
   display: flex;
   flex-direction: column;
   gap: 53.3px;
+  padding-top: 50px;
+}
+body {
+  min-height: 100vh;
 }
 
+@media (max-width: 768px) 
+{
+  .container {
+    align-items: center;
+    padding:0 10px;
+    padding-top: 70px;
+    gap: 20px;
+  }
+}
