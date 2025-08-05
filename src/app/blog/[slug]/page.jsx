@@ -1,10 +1,20 @@
-import React from "react";
 import "@/styles/main.scss";
 import "../blog.scss";
-import { blogPosts } from "@/lib/posts";
+
+async function getPosts() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5");
+  const data = await res.json();
+  return data.map((post) => ({
+    id: post.id,
+    title: post.title,
+    content: post.body,
+    slug: post.title.toLowerCase().replace(/ /g, "-"),
+  }));
+}
 
 export async function generateMetadata({ params }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const posts = await getPosts();
+  const post = posts.find((p) => p.slug === params.slug);
 
   if (!post) {
     return {
@@ -15,21 +25,27 @@ export async function generateMetadata({ params }) {
 
   return {
     title: post.title,
-    description: post.content.slice(0, 160) +"...",
+    description: post.content.slice(0, 160) + "...",
   };
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  const posts = await getPosts();
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default function Page({ params }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export default async function Page({ params }) {
+  const posts = await getPosts();
+  const post = posts.find((p) => p.slug === params.slug);
 
   if (!post) {
-    return <div className="blog-not-found"><h1>Yazı bulunamadı.</h1></div>;
+    return (
+      <div className="blog-not-found">
+        <h1>Yazı bulunamadı.</h1>
+      </div>
+    );
   }
 
   return (

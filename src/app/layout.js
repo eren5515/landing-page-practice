@@ -1,8 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
+"use client";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-
+import { Provider } from "react-redux";
+import store from "@/redux/store";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -21,25 +22,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Force light mode
-              document.documentElement.style.colorScheme = 'light';
-              document.documentElement.setAttribute('data-theme', 'light');
-              
-              // Override any dark mode detection
-              if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.style.colorScheme = 'light';
-                document.body.style.backgroundColor = '#ffffff';
-                document.body.style.color = '#000000';
-              }
-            `,
-          }}
-        />
-        <Navbar></Navbar>
-        {children}
-        <Footer></Footer>
+        <Provider store={store}>
+          <Navbar></Navbar>
+          {children}
+          <Footer></Footer>
+        </Provider>
       </body>
     </html>
   );

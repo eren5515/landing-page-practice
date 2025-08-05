@@ -8,9 +8,7 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import hero from "../../images/hero.png";
 import "@/components/Hero/Hero.scss";
-import { useState } from "react";
 export default function Hero() {
-  const [activeDot, setActiveDot] = useState(0);
 
   const carouselItems = [
     {
